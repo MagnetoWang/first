@@ -18,17 +18,17 @@ main()
 	//printf("%d\n",n);
 	English_sentence_input(initial_data, n, Standby_pointer); //
 	//  http://jingyan.baidu.com/article/b24f6c82cc9add86bfe5daa3.html
-
 	//printf("%d",English_sentence_input);
-	printf("请输入要查询的单词\n");
+	printf("请输入要查询的单词，先输入空格表示开始输入单词，再输入单词，然后输入空格表示结束单词输入，最后回车提交\n");
+	
 	gets(A_number_of_words);
 	t = Statistical_word_occurrences(A_number_of_words, Standby_pointer);
 	printf("该单词出现次数为\n");
 	printf("%d\n", t);
-	printf("请输入要替换的单词\n");
+	printf("请输入要替换的单词，先输入空格表示开始输入单词，再输入单词，然后输入空格表示结束单词输入，最后回车提交\n");
 	char substitute[20], findword[20];
 	gets(findword);
-	printf("请输入替换单词\n");
+	printf("请输入替换单词，先输入空格表示开始输入单词，再输入单词，然后输入空格表示结束单词输入，最后回车提交\n");
 	gets(substitute);
 	find_and_substitute(findword, substitute, Standby_pointer);
 
@@ -68,11 +68,11 @@ int Statistical_word_occurrences(char *A_number_of_words, char *&Standby_pointer
 	for (i = 0; p != NULL; i++)
 	{
 		p = strstr(p, A_number_of_words);
-		p--;
-		if (p[k+1]==32&&p[0]==32)//if()//if (p!=NULL)
+	//	p--;
+		if (p!=NULL)//if (p[k+1]==32&&p[0]==32)//if()//if (p!=NULL)
 		{
 			
-			p+=2;
+			p++;
 			p+=k;//i will over overcome
 			t++;
 		}
