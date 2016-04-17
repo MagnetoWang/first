@@ -1,13 +1,18 @@
 #include <stdio.h>
 #include<string.h>
-//#include<windows.h>
 char article[1000];
-int main(int argc, char const *argv[])
+main()
 {
 	int row,times=0,i;
-	scanf("%d",&row);
-	getchar();
+	while(scanf("%d",&row)!=0)
+    {
+
+    times=0;
+    getchar();
+    char a[1]={"a"};
+    strcpy(article,a);
 	char sentence[100];
+	//strcpy(sentence,a);
 	for (i = 0; i < row; i++)
 	{
 
@@ -15,17 +20,17 @@ int main(int argc, char const *argv[])
 		//getchar();
 		strcat(article,sentence);
 		/* code */
-		puts(article);
+		//puts(article);
 	}
-	puts(article);
+	//puts(article);
 	//getchar();
-	char wanshen[7]="wanshen";
+	char wanshen[]="wanshen";
 	//puts(wanshen);
 	//asleep(10);
 	char *Pcopy=article,*aim=wanshen;
 	do{
 
-        printf("%s2\n",Pcopy);
+        //printf("%s2\n",Pcopy);
 		Pcopy=strstr(Pcopy,aim);
 		//Pcopy++;
 		if(Pcopy!=NULL)
@@ -33,10 +38,12 @@ int main(int argc, char const *argv[])
             Pcopy++;
             times++;
         }
-
 	}while(Pcopy!=NULL);
 	printf("%d\n",times );
-	return 0;
+
+    }
+
+
 }
 /*wanshen
 wanshen
