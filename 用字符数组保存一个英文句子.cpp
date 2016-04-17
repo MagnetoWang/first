@@ -69,9 +69,15 @@ int Statistical_word_occurrences(char *A_number_of_words, char *&Standby_pointer
 	{
 		p = strstr(p, A_number_of_words);
 		p--;
-		if (*p==32&&p[k+1]==32)//if()//if (p!=NULL)
+		if (*p==32)//&&p[k+1]==32)//if()//if (p!=NULL)
 		{
-			
+			p=p+k+1;
+			if(*p==32){
+				p=p-k-1;
+			p=p+2;
+			p+=k;//i will over overcome
+			t++;
+			}
 			p=p+2;
 			p+=k;//i will over overcome
 			t++;
