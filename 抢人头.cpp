@@ -10,9 +10,11 @@ int main(int argc, char const *argv[])
 		if (wanshen>bleed)
 		{
 		   		printf("wanshen\n");
+		   		continue;
 		}
 		int remainer=bleed%kill;
-		if (remainer>=wanshen)
+		printf("%d",remainer);
+		if (remainer>wanshen||remainer==0)
 		{
 			printf("light\n");
 		}
