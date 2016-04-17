@@ -7,10 +7,11 @@ using namespace std;
 int main(int argc, char const *argv[])
 {
 	std::vector<long long int> file_kb;
-	int one_number;
-	long long int sum=0;
+	lont lont int one_number;
 	int The_number_of_file,The_limitation_of_process;
-	cin>>The_number_of_file>>The_limitation_of_process;
+	while(cin>>The_number_of_file>>The_limitation_of_process)
+	{
+			long long int sum=0;
 	for (int i = 0; i < The_number_of_file; i++)
 	{
 		cin>>one_number;
@@ -22,6 +23,7 @@ int main(int argc, char const *argv[])
 	if (The_number_of_file<=The_limitation_of_process)
 	{
 		sum=accumulate(file_kb.begin(), file_kb.end(),0);
+		cout<<sum<<endl;
 		printf("%llu\n",sum);
 		return 0;
 		/* code */
@@ -36,6 +38,10 @@ int main(int argc, char const *argv[])
 			/* code */
 		}
 	}
+	cout<<sum<<endl;
 	printf("%llu\n",sum);
+		
+	}
+
 	return 0;
 }
