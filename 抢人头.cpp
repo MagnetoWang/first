@@ -12,7 +12,7 @@ int main(int argc, char const *argv[])
 		   		printf("wanshen\n");
 		}
 		int remainer=bleed%kill;
-		if (remainer==0)
+		if (remainer>=wanshen)
 		{
 			printf("light\n");
 		}
