@@ -4,12 +4,12 @@ char article[1000];
 main()
 {
 	int row,times=0,i;
-	while(scanf("%d",&row)!=0)
+	while(scanf("%d",&row)!=EOF)
     {
 
     times=0;
     getchar();
-    char a[1]={"a"};
+    char a[]={"a"};
     strcpy(article,a);
 	char sentence[100];
 	//strcpy(sentence,a);
