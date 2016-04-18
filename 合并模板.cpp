@@ -47,31 +47,90 @@ int main(int argc, char const *argv[])
 	}
 	else
 	{
+		int mod;
 		int t=0;
-	for (int i = 0; i < The_number_of_file; i++)
-	{
+		mod=The_number_of_file/2;
+		if (The_limitation_of_process>mod)
+		{
+			int first_sequence;
+			first_sequence=The_number_of_file-The_limitation_of_process+1;
+			if(The_number_of_file/2==0)
+			{
+				first_sequence++;
+			}
+			for (int i = 0; i < first_sequence; i++)
+			{
+				sum=sum+file_kb[i];
+				/* code */
+			}
+			Sum=sum;
+	    for (int i = first_sequence; i < The_number_of_file; i++)
+	    {
 		sum=sum+file_kb[i];
-		t++;
+/*		t++;
 		if (t%The_limitation_of_process==0||i==The_number_of_file-1)
 		{
 			cout<<"sum="<<sum<<endl;
 			Sum=Sum+sum;//when the datas are 6 2,there is error
-			/* code */
 			cout<<"Sum="<<Sum<<endl;
-			cout<<"t="<<t<<endl;
 			t=1;
 			if(i==The_number_of_file-1)
 			{
 				break;
 			}
-		}
+		}*/
 		//cout<<sum<<endl;
-	}
-	//cout<<sum<<endl;
-	printf("%llu\n",Sum);
-	}
-	}
+	    }
+	    Sum=Sum+sum;
+		}//1 1 1 1 1 1 1 1 1 1 1 1
+		else{
 
+			   
+			   int gcd;
+			   do{
+
+			       int remainer=The_number_of_file-The_limitation_of_process;
+			       The_limitation_of_process--;
+			       gcd=remainer%The_limitation_of_process;
+			       //cout<<"gcd="<<gcd<<endl;
+			     } while(gcd>The_limitation_of_process);
+			     The_limitation_of_process++;
+			     if(gcd!=0){
+			     	   gcd++;
+			          
+			          for (int i = 0; i <gcd; i++)
+			           {
+				          sum=sum+file_kb[i];
+			            }
+			            Sum=sum;
+			            t=1;
+				 }
+			            
+	            for (int i = gcd; i < The_number_of_file; i++)
+	            {
+		              sum=sum+file_kb[i];
+		              t++;
+		              if (t%The_limitation_of_process==0||i==The_number_of_file-1)
+                        {  
+			         // cout<<"sum="<<sum<<endl;
+			            Sum=Sum+sum;//when the datas are 6 2,there is error
+			            //cout<<"Sum="<<Sum<<endl;
+			                 t=1;
+			             }
+			           /* if(i==The_number_of_file-1)
+			               {
+				            break;
+			               }*/
+		        }
+		    }
+		
+		//cout<<sum<<endl;
+		printf("%llu\n",Sum);
+	}
+	//	cout<<"t="<<t<<endl;
+		//cout<<sum<<endl;
+	
+}
 	return 0;
 }
 /*
