@@ -12,6 +12,7 @@ int main(int argc, char const *argv[])
 	while(cin>>The_number_of_file>>The_limitation_of_process)
 	{
 	long long int sum=0;
+	file_kb.clear();
 	for (int i = 0; i < The_number_of_file; i++)
 	{
 		cin>>one_number;
@@ -28,24 +29,27 @@ int main(int argc, char const *argv[])
 		for(int i=0;i<The_number_of_file; i++)
 		{
 			sum=sum+file_kb[i];
-			cout<<sum<<endl;
-			cout<<file_kb[0]<<endl<<file_kb[1];
+			//cout<<sum<<endl;
+			//cout<<file_kb[0]<<endl<<file_kb[1];
 		}
 		//cout<<file_kb[0]<<endl<<file_kb[1];
 		//cout<<sum<<endl;
 		printf("%llu\n",sum);
 		//return 0;//NOTES:don't do that. you should end up with this programm by cin operation
 		/* code */
-	}else{
+	}
+	else
+	{
 	for (int i = 0; i < The_number_of_file; i++)
 	{
 		sum=sum+file_kb[i];
 		int t=i+1;
 		if (t%The_limitation_of_process==0)
 		{
-			sum=sum+sum;
+			sum=sum+sum;//when the data is 6 2,there is error
 			/* code */
 		}
+		//cout<<sum<<endl;
 	}
 	//cout<<sum<<endl;
 	printf("%llu\n",sum);
