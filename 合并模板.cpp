@@ -6,19 +6,26 @@
 using namespace std;
 int main(int argc, char const *argv[])
 {
-	std::vector<long long int> file_kb;
 	long long int one_number;//123456789123456789
 	int The_number_of_file,The_limitation_of_process;
 	while(cin>>The_number_of_file>>The_limitation_of_process)
 	{
+	vector<long long int> file_kb(The_number_of_file);
 	long long int sum=0;
+	long long int Sum=0; 
 	file_kb.clear();
+		
 	for (int i = 0; i < The_number_of_file; i++)
 	{
 		cin>>one_number;
 		//cout<<one_number;
 		file_kb.push_back(one_number);
 	}
+		if(The_number_of_file==1)
+		{
+			cout<<0<<endl;
+			continue;
+		}
 	//int mod=The_number_of_file/The_limitation_of_process;
 	int flag=1;
 	sort(file_kb.begin(), file_kb.end());
@@ -40,21 +47,39 @@ int main(int argc, char const *argv[])
 	}
 	else
 	{
+		int t=0;
 	for (int i = 0; i < The_number_of_file; i++)
 	{
 		sum=sum+file_kb[i];
-		int t=i+1;
-		if (t%The_limitation_of_process==0)
+		t++;
+		if (t%The_limitation_of_process==0||i==The_number_of_file-1)
 		{
-			sum=sum+sum;//when the data is 6 2,there is error
+			cout<<"sum="<<sum<<endl;
+			Sum=Sum+sum;//when the datas are 6 2,there is error
 			/* code */
+			cout<<"Sum="<<Sum<<endl;
+			cout<<"t="<<t<<endl;
+			t=1;
+			if(i==The_number_of_file-1)
+			{
+				break;
+			}
 		}
 		//cout<<sum<<endl;
 	}
 	//cout<<sum<<endl;
-	printf("%llu\n",sum);
+	printf("%llu\n",Sum);
 	}
 	}
 
 	return 0;
 }
+/*
+123456789
+123456789
+123456789
+123456789
+123456789
+123456789
+123456789
+*/
